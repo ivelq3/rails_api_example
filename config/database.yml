@@ -1,0 +1,23 @@
+default: &default
+  # adapter: sqlite3
+  # timeout: 5000
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: password
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: api_example_development
+
+test:
+  <<: *default
+  database: api_example_test
+
+production:
+  <<: *default
+  database: api_example_production
+  username: api_example
+  password: <%= ENV['API_EXAMPLE_DATABASE_PASSWORD'] %>
