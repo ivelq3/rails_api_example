@@ -1,4 +1,0 @@
-:schedule:
-  delete_expired_diary:
-    every: '1m'
-    class: ExampleWorker

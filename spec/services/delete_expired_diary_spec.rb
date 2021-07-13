@@ -1,5 +1,5 @@
-RSpec.describe DeleteExpiredDiary do
-  it 'Delete expired diaries' do
+describe DeleteExpiredDiary do
+  it 'delete expired diaries' do
     diary = Diary.create(title: Faker::Name.name, kind: :private, expiration: DateTime.now + 10.minutes)
 
     2.times do
